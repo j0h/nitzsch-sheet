@@ -7,7 +7,7 @@ TARGET=target
 LATEXMKOPT=-pdf -jobname=$(TARGET)/out
 CONTINUOUS=-pvc
 
-MAIN=paper
+MAIN=main
 SOURCES=$(MAIN).tex $(shell find . | grep *.tex)
 #FIGURES := $(shell find figures/* images/* -type f)
 
