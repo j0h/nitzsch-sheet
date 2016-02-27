@@ -152,7 +152,7 @@ die ``Binomialverteilung'' (z.B. Urnen mit zurücklegen ohne Beachtung der Reihe
 \]
 die ``Normalverteilung'' (\textit{stetige} Binomialverteilung) mit Erwartungswert \(\mu\) und Standardabweichung \(\sigma\)
 \[
-	f(x) = \frac{1}{\sigma\sqrt{2\pi}} \cdot e^{-(x-\mu)^2/(2\sigma^2),
+	f(x) = \frac{1}{\sigma\sqrt{2\pi}} \cdot e^{-(x-\mu)^2/(2\sigma^2)},
 \]
 \[
 	F(x) = \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^x e^{-\left(\frac{t-\mu}{\sigma}\right)^2 / 2} dt.
@@ -169,7 +169,7 @@ die ``Exponentialverteilung'' (Lebensdauer Elektrogeräte) mit Parmeter \(\lambd
 \[
 	F(x) = \left\lbrace
 		\begin{array}{ll}
-			1-e^{-\lamda x}, & x \geq 0\\
+			1-e^{-\lambda x}, & x \geq 0\\
 			0, & x < 0.
 		\end{array}
 	\right.
@@ -204,7 +204,7 @@ Die Varianz \(\sigma^2\) ist die mittlere quadrierte Abweichung um den Mittelwer
 Die Standardabweichung \(\sigma\) ist die Wurzel aus der Varianz \(\sigma^2\). Im diskreten Fall:
 \[
 	V(X) = \sigma^2 = \\sum_{i=1}^n (x_i-\mu)^2p(x_i).
-]
+\]
 Im stetigen Fall:
 \[
 	V(X) = \sigma^2 = \int_{-\infty}^\infty (x-\mu)^2f(x)dx.
