@@ -16,7 +16,6 @@ Es kommen bei der \textbf{Wahrnehmung} mehrere Faktoren ins Spiel:
         \item streng limitiert
         \item System 1 (spontan, schonend, ungenau, unterstützend),
             System 2 (ressourcenfresser)
-
     \end{itemize}
     \item Wahrnehmung und Verfügbarkeit
     \begin{itemize}
@@ -351,3 +350,27 @@ Die WGF zeichnet sich durch 2 Eigenschaften aus:
 \end{itemize}
 
 \subsection{Wie Menschen die Zeit bewerten}
+Bisher wurde der Faktor Zeit außer Acht gelassen. Hier wird untersucht,
+in wiefern Zeit einen Einfluss auf eine Entscheidung hat.
+
+Der \textbf{Common-Difference-Effekt} beschreibt den Effekt, dass
+eine Wartezeit vom Zeitpunkt ``jetzt'' viel bedeutender wahrgenommen wird
+als ein Startzeitpunkt in der Zukunft. Je weiter die Ereignisse in der Zukunft
+liegen, desto weniger bedeutend sind Zeitdifferenzen zwischen Ereignissen.
+Dies wird in das Discounted Unity Modell gegossen:
+\begin{equation}
+        DU(a) = \sum_{t=0}^T (\frac{1}{1+i})^t \cdot u_t(a_t)
+\end{equation}
+Dabei ist $i$ ein Faktor, die \textbf{Diskonstante}, $a_t$ die Alternative
+zum Zeitpunkt t und $u_t$ die Nutzenfunktion. Häufig vereinfacht man wie folgt:
+$u(a_t) = a_t$. Da das Discounted Unity Modell ein präskriptives Modell ist,
+findet keine Kalkulation der Bewertungslogik statt. Dafür wird das
+\textbf{Hyperbolic-DU-Model} benötigt.
+\begin{equation}
+    HDU(a) = \sum_{t=0}^T (\frac{1}{1+\alpha t})^{\frac{\alpha}{\beta}} \cdot u_t(a_t)
+\end{equation}
+
+Das \textbf{Hyberbolic-Discounted-Value-Modell} formuliert sich analog wie folgt:
+\begin{equation}
+    HDV(a) = \sum_{t=0}^T (\frac{1}{1+\alpha t})^{\frac{\alpha}{\beta}} \cdot \nu_t(a_t)
+\end{equation}
