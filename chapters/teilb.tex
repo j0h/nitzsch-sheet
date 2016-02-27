@@ -1,0 +1,95 @@
+\subsection{Aufstellung des Wirkungsmodells und erste Lösungsversuche}
+Bereits in Teil A kurz angesprochen: Nachdem die Ziele definiert wurden stellt man das Wirkungsmodell auf. Zunächst Suche nach Alternativen:
+\begin{itemize}
+	\item Kreative Lösung durch Fokussierung auf jeweils ein einzelnes Ziel,
+	\item Erweiterung auf Zielkombinationen,
+	\item Betrachtung der Idealalternative (Alternative, in der alle Ziele gleichzeitig bestens erfüllt sind),
+	\item Verwenden der Instrumentalziele,
+	\item Aufstellen eines Einflussdiagramms,
+	\item Befragen von Dritten.
+\end{itemize}
+Danach betrachtet man mögliche Umweltzustände und -prognosen. Bei einer diskreten Modellierung führt dies zu einem dreistufigen Verfahren:
+\begin{enumerate}
+	\item Definition eines oder mehrerer Einflussfaktoren und entsprechender Umweltzustände,
+	\item Angabe von Wahrscheinlichkeiten für die Zustände,
+	\item Angabe von Zielausprägungen für jede Alternative und jeden zustand.
+\end{enumerate}
+Beachte, dass Punkte 1 und 2 Umweltprognosen sind (nicht beeinflussbar), Punkt 3 ist eine Wirkungsprognose, d.h. sie berücksichtigt Veränderungen im System je nach Alternative.\\
+Bei einer stetigen Modellierung werden keine konkreten Umweltzustände definiert. Es wird stattdessen eine stetige Verteilungsfunktion für die Zielausprägungen gesucht (Monte-Carlo-Simulation).\\
+Zum Finden der Einflussfaktoren geht man folgendermaßen vor:
+\begin{itemize}
+	\item Identifikation der unsicheren Einflussfaktoren, die man nicht selbst beeinflussen kann. Alles was der Entscheider selbst beeinflussen kann sollte sich in den Alternativen (s.o.) wiederfinden,
+	\item Formulierung von Umweltzuständen in Form geeigneter Szenarien.
+\end{itemize}
+Die im letzten Schritt gefundenen Einflussfaktoren müssen nun noch mit Wahrscheinlichkeiten versehen werden um die Prognosen zu formulieren. Dazu gibt es nun mehrere Dinge zu beachten:
+\begin{itemize}
+	\item Wie schätze ich Wahrscheinlichkeiten richtig? (Umweltprognose)
+	\item Wie messe ich die Zielausprägungen? (Wirkungsprognose)
+	\item Wie weit nimmt der Entscheider die Wahrscheinlichkeiten nur verzerrt wahr? (Umwelt- und Wirkungsprognose)
+\end{itemize}
+Beachte, dass der letzte Punkt erst in Teil C behandelt ist. Als Resultat erhält man eine Ergebnismatrix mit prognostizierten Zielausprägungswerten, abhängig von Alternativen und äußeren Einflussfaktoren.\\
+\ \\
+Mit der Ergebnismatrix ist das Entscheidungsproblem gut abgebildet bzw. modelliert, jedoch ist noch keine Lösung für das dahinter stehende Entscheidungsproblem gefunden. Verschiedene Konstellationen verlangen verschiedene Herangehensweisen, die im folgenden beschrieben sind.\\
+\ \\
+Im einfachsten Fall haben wir verschiedene Alternativen gegeben um eines der definierten Ziele zu erreichen. Um die Anzahl der Alternativen einzugrenzen definiert man \textbf{Anspruchsniveaus}, die angeben, welche Zielausprägungen mindestens erreicht werden sollen.\\
+Im Idealfall bleibt nur eine Alternative übrig, ist dies nicht der Fall folgt als nächstes eine Dominanzüberprüfung.
+Eine Alternative \(a\) \textbf{dominiert} eine Alternative \(b\), falls in jedem entscheidungsrelevanten Aspekt (Ziele, Zustände) \(a\) mindestens so gut ist, wie \(b\). \(a\) dominiert \(b\) \textbf{echt}, wenn \(a\) zusätzlich in einem Aspekt echt besser ist. \textbf{Strikte Dominaz} liegt dann vor, wenn dies für alle Aspekte gilt.\\
+Beachte, dass dominierte Alternativen nie die beste Alternative sein können, aber die zweitbeste! In gewissen Konstellationen reichen die Definition von Anspruchsniveaus, sowie eine Dominazüberprüfung bereits aus um die optimale Alternative zu finden. In den folgenden Abschnitten gehen wir darauf ein, falls dem nicht so ist.
+
+\subsection{Entscheidungen unter Unsicherheit mit einem Ziel: Das Erwartungsnutzenkalkül}
+Der Leser mag sich wundern, weshalb die bisherigen Verfahren nicht ausreichen um eine rationale (d.h. eine in vielerlei Hinsicht sinnvolle) Entscheidung zu treffen. Ein naheliegendes Konzept ist es die verschiedenen Alternativen hinsichtlich ihres Erwartungswertes in den Zielausprägungen zu vergleichen. Das dies nicht immer sinnvoll ist zeigt u.a. das St.Petersburg-Spiel. Hier ist der Erwartungswert \(\infty\), was im Bezug auf das Spiel jedoch völlig unbrauchbar ist. Die fehlenden Aspekte in diesem Kalkül sind, dass der Grenznutzen (die Ableitung einer Nutzenfunktion, dazu später mehr) abnimmt und dass der Entscheider eine bestimmte Haltung zu Risiken hat. Diese beiden Aspekte fließen in das Konzept einer Nutzenfunktion ein.\\
+Das \textbf{Erwartungsnutzenmodell} betrachtet eine Alternative als Tupel \(a = (p_1, a_1; \ldots; p_n, a_n)\), wobei die \(p_i\) die Wahrscheinlichkeit eines Zustands \(i\) mit Ausprägung \(a_i\) sind. Der Erwartungsnutzen von \(a\) ist dann
+\[
+	EU(a) = \sum_{i=1}^n p_i \cdot u(a_i),
+\]
+wobei \(u\) die \textbf{Nutzenfunktion} ist (Wie viel nützt mir die Ausprägung \(a_i\)?) \(EU\) steht hier für ``Expected Utility''. Die zweite Ergänzung zum Erwartungswertkalkül ist das \textbf{Risikoverhalten}. Dazu definieren wir zunächst eine ``Lotterie'': Der Spieler hat die Wahl zwischen einem festen Geldbetrag 50EUR oder einer 50\%-igen Chance auf 100EUR oder er geht leer aus. Ein Spieler hat ein \textbf{Sicherheitsäquivalent} \(S\), den der Spieler als äquivalent ansieht zu seiner unsicheren Alternative, z.B. 40EUR. Die \textbf{Risikoprämie} \(R\) ist definiert als \(R = \mu - S\). Der Erwartungswert \(\mu\) beträgt hier 50EUR. Die Risikoprämie ist somit 10EUR. Das Risikoverhalten des Entscheiders ist nun:
+\begin{itemize}
+	\item risikoneutral, falls \(R=0\),
+	\item risikoscheu, falls \(R>0\),
+	\item risikofreudig, falls \(R<0\).
+\end{itemize}
+Die \textbf{Risikoeinstellung} ist die Differenz zwischen Nutzenfunktion \(u\) und Wertfunktion (Höhenpräferenzfunktion) \(v\) liegt. Letzteres ist die Bewertung des Entscheiders seiner Chancen im Spiel. Der Spieler hat eine risikoscheue Einstellung, falls die Nutzenfunktion über der Wertfunktion liegt, sonst eine risikofreudige Einstellung.\\
+Die Ermittlung der Nutzenfunktion erfordert etwas Arbeit. Zuerst muss eine geeignete Messskala gefunden werden (stetig oder diskret?). Eine stetige Skala zu definieren ist auf mehreren Wegen möglich. Das Grundprinzip ist jedoch folgendes:
+\begin{enumerate}
+	\item Ermittlung der Stützstellen:
+	Auf einer Bandbreite \([x^-, x^+]\) mit \(u(x^-) = 0, u(x^+) = 1\) und \(u(S) = .5\).
+	\item Ableitung einer vollständigen, glatten Funktion (z.B. durch Interpolation).
+\end{enumerate}
+Um die Stützstellen zu ermitteln kann man weitere Verfahren anwenden: Halbierungsmethode (bestimme \(x^{.5}\) und setze \(u(x^{.5} = .5\)), Fraktilmethode (bestimme \(x\) für \(p=.2,.4,.6,.8\)), Methode variabler Wahrscheinlichkeiten (gebe Sicherheitsäquivalent vor, Befragung nach \(p\), setze \(u(x) = p\)) und die Lotterievergleichsmethode (gebe kein Sicherheitsäquivalent vor, sondern ein alternatives Spiel und frage wieder nach \(p\) und setze \(u(x)=2p\)).\\
+Die Nutzenfunktionen (von fundamental formulierten Zielen) sind meist monoton und verlaufen glatt.\\
+Die \textbf{exponentielle Nutzenfunktion} hat einen gleichmäßigen Verlauf und wird nur durch den ``Risikoaversionsparameter'' \(c\) determiniert:
+\[
+	u(x) = \left\lbrace
+		\begin{array}{ll}
+			\frac{1-e^{-c\frac{x-x^-}{x^+-x^-}}}{1-e^{-c}}, & c \neq 0\\
+			\frac{x-x^-}{x^+-x^-}, & c = 0,
+		\end{array}
+	\right.
+\]
+mit \(c = -2ln(\frac{1}{p}-1)\).\\
+Hier offenbart sich eine große Herausforderung für das Erwartungsnutzenmodell. Aussagen des Entscheiders über sein Risikoverhalten sind sehr subjektiv, was im konflikt zur Objektivität einer Nutzenfunktion steht. Hier schlägt die Entscheidungstheorie zwei Richtungen ein, die präskriptive (``Was ist die beste rationale Entscheidung?'') und die deskriptive (``Wie entscheiden Menschen tatsächlich?'') Entscheidungstheorie (letztere wird in Teil C behandelt). Eine Veranschaulichung dieses Konflikts bietet das \textsc{Allais}-Paradoxon, wonach Menschen sich oft (empirisch gemessen) für eine Alternative mit schlechterem Erwartungswert entscheiden. Für ein solches Verhalten gibt es keine Nutzenfunktion.\\
+Zuletzt führen wir in diesem Abschnitt \(\mu-\sigma\)-Regeln ein. Sie sind einfacher als Nutzenfunktionen, funktionieren aber unter bestimmten Bedingungen genauso gut. Dabei stützen sie sich nur den Erwartungswert \(\mu\) und die Standardabweichung \(\sigma\) einer Alternative. Eine \(\mu-\sigma\)-Regel ist eine Funktion \(F\) in zwei Variablen \(\mu\) und \(\sigma\), z.B. \(F(\mu, \sigma) = \mu - \frac{1}{2}\sigma\). Für zwei Alternativen \(a, b\) lassen sich einfach Erwartungswert und Standardabweichung bestimmen und einsetzen. Die Alternative mit dem höheren Funktionswert wird dann vorgezogen. \(\mu-\sigma\)-Regeln sind nur dann anwendbar, wenn sie kompatibel zu einer Erwartungsnutzenmaximierung sind, dies ist der Fall bei Vorliegen eine quadratischen Nutzenfunktion oder bei einer Einschränkung auf eine zweiparametrigen Verteilung (dann sind alle Verteilunge eindeutig durch \(\mu\) und \(\sigma\) gegeben).
+
+\subsection{Berücksichtigung mehrerer Ziele im Präferenzmodell}
+Wir betrachten nun das \textbf{additive Modell}, welches mehrere Ziele berücksichtigt. Dazu werden die zielspezifischen Nutzenwertde additiv und gewichtet aggregiert.\\
+Wir betrachten wieder eine Alternative \(a = (a_1, \ldots, a_n)\) mit gewichteten Zielen \(i=1,\ldots,n\) mit Gewichten \(w_i\) und Nutzenfunktionen \(u_i\). Für die Gewichte gelte \(\sum_{i=1}^n w_i = 1\). Es gilt dann
+\[
+	u(a) = \sum_{i=1}^n w_iu_i(a_i).
+\]
+Dies funktioniert offensichtlich nur unter Sicherheit. Das Modell lässt sich jedoch problemlos erweitern auf Entscheidungen unter Risiko, wenn wir noch Umweltzustände \(s_j, j=1,\ldots,m\) hinzunehmen:
+\[
+	EU(a) = \sum_{j=1}^m \left( p(s_j) \cdot \sum_{i=1}^n w_iu_i(a_{ij})\right),
+\]
+wobei die \(a_{ij}\) die Ausprägungen des Ziels \(i\) in Zustand \(j\) sind. damit das additive Modell angewendet werden darf müssen folgende Bedingungen erfüllt sein:
+\begin{itemize}
+	\item Fundamentalität: Zielsystem darf keine Instrumentalziele umfassen,
+	\item Messbarkeit: Die Zielausprägungen müssen auf eine diskreten oder stetigen Skala abbildbar sein,
+	\item Vollständigkeit: Alle entscheidungsrelevanten Aspekte müssen im Zielsystem auftauchen,
+	\item Redundanzfreiheit: Kein aspekt darf in mehreren Zielen gleichzeitig benannt werden,
+	\item Präferenzunabhängigkeit: Weder in der zielspezifischen Bewertung noch in der Zielgewichtung dürfen Präferenzen von Ausprägungen in anderen Zielen abhängen.
+\end{itemize}
+Im folgenden nehmen wir an, dass das Zielsystem korrekt definiert ist und alle zielspezifischen Nutzenfunktionen \(u_i\) ermittelt sind. Wir zeigen nun Verfahren zur Bestimmung der Zielgewichte \(w_i\).
+%TODO
+\subsection{Problemlösungen bei unvollständiger Information}
+
+\subsection{Mehrstufige Entscheidungsprobleme}
