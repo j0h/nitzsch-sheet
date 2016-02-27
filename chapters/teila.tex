@@ -62,9 +62,8 @@ Als nächstes untersuchen wir den Fairnessbegriff, dzu definieren wir:\\
 Echte Fairnessüberlegung Spieler A: ``Welche Aufteilung ist fair?'' (in beiden Spielen).\\
 Homo oeconomicus-Überlegung Spieler A: ``Wie hoch sind die Annahmewahrscheinlichkeiten von Spieler B in Abhängigkeit vom angebotenen Betrag?'' (nur im Ultimatumspiel)\\
 Empirisch: Spieler A gibt im Diktatorspiel deutlich weniger ab als im Ultimatumspiel (keine echte Fairness). Dies wird verstärkt dadurch, wenn weder xperimentleiter noch der Spielpartner sieht, wer das Angebot macht.\\
-Fazit: Menschen sind nicht immer fair, aber wollen stets als fair wahrgenommen werden. Im anonymen Kontext kommen weniger soziale Präferenzen zum Tragen, bei geringer sozialer Distanz dafür mehr.
-
-\subsection{Wirkungsmodell und Umgang mit Wahrscheinlichkeiten}
+Fazit: Menschen sind nicht immer fair, aber wollen stets als fair wahrgenommen werden. Im anonymen Kontext kommen weniger soziale Präferenzen zum Tragen, bei geringer sozialer Distanz dafür mehr.\\
+\ \\
 Ein \textbf{Ziel} beschreibt einen bewertungsrelevanten Aspekt, ohne Angabe einer konkreten Ausprägung, lediglich mit einer Richtungsangabe.\\
 Ein Ziel ist somit nicht etwa ein ``erstrebenswerter Zustand''.\\
 In der präskriptiven Entscheidungstheorie (Teil B) sind Ziele (Zielskalen) die ersten zu findenen Faktoren eines Entscheidungsproblems, die später in einer optimalen Alternative des Wirkunsgmodell (gleich definiert) möglichst gut ausgeprägt sein sollen.\\
@@ -80,5 +79,32 @@ Viele Entscheidungen betreffen nicht die eigene Person oder werden nicht allein 
 	\item gezwungen, Loyalität, Hierarchische Beziehung (Unterscheide: konkrete Weisung, keine konkrete Weisung),
 	\item freiwillig, Altruismus, Altruistische Beziehung.
 \end{itemize}
+In Unternehmen: Ob Ziele eines Dritten für die zu treffende Entscheidung relevant sind und berücksichtigt werden müssen kann anhand eines Stakeholder-Netzdiagramms schnell abgelesen werden. Stakeholder können dabei sein: Kunden, Nachbarabteilungen, Geschäftsführung, Betriebsrat, Anwohner, Lieferanten, Aktionäre, Gesellschaft etc. Diese können direkt oder indirekt am Entscheidungsprozess teilnehmen.\\
+
+\subsection{Wirkungsmodell und Umgang mit Wahrscheinlichkeiten}
+Ein \textbf{Einflussdiagramm} besteht aus Zielen (Sechseck), Alternativen (Rechteck) und Ereignissen, die durch Kanten verbunden sind. Eine Kante zwischen zwei Knoten liest sich dabei als ``beeinflusst''. Die Alternativen und Eregnisse bilden das ``Wirkungsmodell'', die Alternativen sind die Einflussmöglichkeiten des Entscheiders, die Eregnisse sind unsichere Einflüsse, diese können von den gewählten Alternativen abhängen, aber auch von nicht beeinflussbaren Faktoren (Umweltprognose).\\
+\ \\
+Menschen haben verschiedene Interpretation von Wahrscheinlichkeiten:
+\begin{itemize}
+	\item Symmetrieabhängige Interpretation (z.B. Würfel),
+	\item Frequentische Interpretation -- Hohe Anzahl, gleiche Rahmenbedingungen (z.B. Wetter),
+	\item subjektivistische Interpretation (Maß des Vertrauens).
+\end{itemize}
+Bei der letzten kann die Wahrscheinlichkeit nicht validiert werden, basiert allein auf Erfahrungswissen.\\
+\ \\
+Im folgenden ein Überblick zur Wahrscheinlichkeitsrechnung. Eine Entscheidung kann entweder unter Sicherheit oder Unsicherheit getroffen werden. Entscheidungssituation unter Sicherheit sind unproblematisch. unter Unsicherheit können wir zwei Fälle unterscheiden: Wenn wir für Ereignisse keine Wahrscheinlichkeiten kennen wird eine Entscheidung unter Ungewissheit getroffen. Mit Wahrscheinlichkeiten trifft man die Entscheidung unter Risiko. Letzteres ist Gegenstand der Wahrscheinlichkeitsrechnung. Zur Terminologie:
+\begin{description}
+	\item[Zufallsexperiment] Vorgang mit unbekanntem Ausgang, zu dem aber Wahrscheinlichkeiten bekannt sind (z.B. Würfelwurf),
+	\item[Ergebnismenge] Menge aller möglichen Ausgänge eines Zufallsexperiments (z.B. \(\Omega=\{1,2,3,4,5,6\}\)),
+	\item[Ereignis] Teilmenge der Ergebnismenge (z.B. Wurf mit Ergebnis \(\leq 5\), d.h. \(A=\{5,6\}\)),
+	\item[Komplementärereignis] JEDER Informatiker weiß was das heißen soll,
+	\item[Elementarereignis] Ereignis mit nur einem Ergebnis (Notation \(\omega\)).
+\end{description}
+Die Wahrscheinlichkeitsrechnung stützt sich auf die drei \textsc{Komogorow}'schen Axiome: Sei \(\Omega\) die Ergebnismenge.
+\begin{enumerate}
+	\item Nichtnegativität: Jedem Ereignis \(A \subseteq \Omega\) kann eine Wahrscheinlichkeit \(0 \leq p(A) \leq 1\) zugeordnet werden.
+	\item Normierung: \(\Sum_{\omega\in\Omega} p(\omega) = 1\).
+	\item Additivität: Für mehrere paarweise diskunkte Ereignisse \(A_i\) gilt \(p(\bigcup_{i} A_i) = \Sum_{i} p(A_i)\).
+\end{enumerate}
 
 % eof
