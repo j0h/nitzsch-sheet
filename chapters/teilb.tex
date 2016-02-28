@@ -88,8 +88,40 @@ wobei die \(a_{ij}\) die Ausprägungen des Ziels \(i\) in Zustand \(j\) sind. da
 	\item Redundanzfreiheit: Kein aspekt darf in mehreren Zielen gleichzeitig benannt werden,
 	\item Präferenzunabhängigkeit: Weder in der zielspezifischen Bewertung noch in der Zielgewichtung dürfen Präferenzen von Ausprägungen in anderen Zielen abhängen.
 \end{itemize}
-Im folgenden nehmen wir an, dass das Zielsystem korrekt definiert ist und alle zielspezifischen Nutzenfunktionen \(u_i\) ermittelt sind. Wir zeigen nun Verfahren zur Bestimmung der Zielgewichte \(w_i\).
-%TODO
+Im folgenden nehmen wir an, dass das Zielsystem korrekt definiert ist und alle zielspezifischen Nutzenfunktionen \(u_i\) ermittelt sind. Wir zeigen nun Verfahren zur Bestimmung der Zielgewichte \(w_i\).\\
+Dazu zunächst eine Bemerkung zur Interpretation. Die numerischen Werte eines Zielgewichts haben weder allein noch in Relation mit anderen Zielgewichten eine echte Aussagekraft. D.h. ein Ziel \(i\) mit Gewicht \(w_i=0.6\) ist nicht pauschal doppelt so wichtig wie ein Ziel \(j\) mit Gewicht \(w_j=0.3\). Die Gewichte sind lediglich parameter, die Austauschraten zwischen Zielen beschreiben.\\
+Eine Forderung an ein rationales Entscheidungskalkül ist, dass eine Veränderung der Bandbreite (d.h. das Intervall der möglichen Zielausprägungswerte) darf nicht zu einer anderen Entscheidungsrangfolge führen. Passiert dies doch, so redet man vom ``Bandbreiten-Effekt''. Das \textbf{Trade-off-Verfahren} hat keinen Bandbreiteneffekt und funktioniert wie folgt: Wir untersuchen jeweils Trade-off-Aussagen, das sind Aussagen bei denen zwei Alternativen als gleichwertig angesehen werden bei verschiedenen Zielausprägungen (``Wenn ein Auto 50PS mehr hat, dann darf es auch 3000EUR mehr kosten.'').
+Um \(m\) Zielausprägungen zu ermitteln benötigt man \(m-1\) Trade-offs. Man löst effektiv ein lineares Gleichungssystem, für das gilt:
+\[
+	\sum_{i=1}^m w_i = 1
+\]
+und für alle Trade-offs \((a_i, x_j^-) \sim (x_i^-, x_j^+)\)
+\[
+	w_i = \frac{u_j(x_j^+) - u_j(x_j^-)}{u_i(a_i) - u_i(x_i^-)} w_j
+\]
+
 \subsection{Problemlösungen bei unvollständiger Information}
+Bei Problemstellungen mit unvollständiger Information können keine oder nur ungenaue Prognosen über verschiedene Zustände gemacht werden (``Wie wird das Wetter am 3. September in einem Jahr?''). In diesem Fall werden möglichst realistische Annahmen getroffen und in eine \textbf{Sensitivitätsanalyse} mögliche Abweichungen in allen unsicheren Variablen betrachtet.\\
+Es müssen nicht unbedingt Wahrscheinlichkeiten sein, die unsicher sind, auch die Präferenzen, d.h. die Nutzenfunktionen können nicht vollständig bekannt sein.\\
+Der Dominanzbegriff lässt sich erweitern für Entscheidungen mit unvollständiger Information: Eine Alternative \(a\) \textbf{dominiert} eine andere Alternative \(b\) falls \(EU(a) \geq EU(b)\) für alle zum aktuellen Informationsstand des Entscheiders möglichen Nutzenfunktionen \(u\) und Wahrscheinlichkeiten \(p\).
+Die Dominanzüberprüfung folgt in zwei Schritten: 1. Minimum und Maximum der Differenzen bestimmen:
+\[
+	M := \max EU(a)-EU(b),\quad \min EU(a)-EU(b) =: m.
+\]
+2. Auf Dominaz überprüfen: Falls \(m \geq 0\) dominiert Alternative \(a\) die Alternative \(b\), falls \(M \leq 0\) dominiert Alternative \(b\) die Alternative \(a\).\\
+Falls selbst ohne jede Information die Dominanz gegebene ist, spricht man auch von \textbf{absoluter Dominanz}.\\
+\ \\
+Wir untersuchen nun, wie sich Unsicherheiten sonst noch behandeln lassen und beginnen mit unvollständigen Informationen über Wahrscheinlichkeiten. Wahrscheinlichkeiten lassen sich der Größe nach ordnen, damit genügt es in der Ergebnismatrix die Spalten (Zustände) nach ihren Wahrscheinlichkeiten zu sortieren und zu jeder Zeile (Alternativen) Spaltenweise ihre Nutzen zu addieren (kumulierte Werte). Gilt für eine Alternative, dass sie in jeder Spalte ihrer kumulierten Werte besser ist als alle anderen Alternativen, so ist dies die beste Alternative.\\
+Weiterhin lassen sich Wahrscheinlichkeiten eingrenzen auf Intervalle. Um das Minimum zu bestimmen (s.o.) geht man wie folgt vor: 1. Setze alle Wahrscheinlichkeiten auf das Minimum. 2. Wähle Wahrscheinlichkeit mit dem niedrigsten Koeffizienen (\(EU(a)-EU(b)\)) und setze diesen auf das Maximum. 3. Wiederhole Schritt 2 bis 100\% erreicht ist.\\
+\ \\
+Wir nehmen im folgenden an, dass alle Zustandswahrscheinlichkeiten bekannt sind, nur ein Ziel relevant ist und die Nutzenfunktionen monoton sind.\\
+Eine Alternative \(a\) dominiert eine andere \(b\) \textbf{stochastisch 1. Grades}, falls für jede Ausprägung der Zielvariablen der Wahrscheinlichkeit, diese zu überschreiten, bei \(a\) mindestens so hoch ist wie bei \(b\), d.h \(EU(a)-EU(b)>0\) für alle monotonen \(u\) stets positiv.\\
+Eine Alternative \(a\) dominiert eine andere \(b\) \textbf{stochastisch 2. Grades}, falls für jede Ausprägung \(x\) die Fläche unter dem Risikoprofil bis zu dieser Ausprägung bei \(a\) mindestens so groß ist wue bei \(b\), d.h \(\int_0^x EU(a)-EU(b)dt > 0\) für alle monoton-konkaven \(u\).\\
 
 \subsection{Mehrstufige Entscheidungsprobleme}
+Mehrstufige Entscheidungen erfordern mehrere Entscheidungen abhängig von anderen vorausgegangen. Dazu hilft ein Entschidungsbaum mit Alternativen (Rechteck), Zustände (Kreis) und Zielausprägungen (gleichseitiges Dreieck). Die ausgehenden Kanten sind bei Alternativenknoten mit den jeweiligen Alternativen beschriftet, bei Ereinissen mit den möglichen Ausgängen und ihren zugehörigen Wahrscheinlichkeiten. Die Zielausprägungen haben nur eingehene Kanten und sind mit ihrem Zielwert beschriftet.\\
+Eine \textbf{Strategie} im Entscheidungbaum ist nun eine Menge von je einer ausgehenden Kante pro Alternative.\\
+Mit Hilfe des \textbf{Roll-Back-Verfahren} lässt sich eine optimale Strategie bestimmen. Wir laufen von den Blättern zur Wurzel: An jedem Entscheidungsknoten wird die jeweils beste Handlungsalternative markiert und mit den Ergebnissen (Erwartungswerte) wird weiter gerechnet.
+Das Verfahren lässt sich statt mit Erwartungswerten genauso auch mit Nutzenerwartungswerten durchführen.\\
+\ \\
+Zuletzt betrachten wir den Wert von Information. Dieser besagt einfach, wie viel Nutzen in einer Information steckt. In einer Entscheidungssituation unter Unsicherheit kann eine Information einen Wert haben, da sich bei Kenntnis dieser Information der Erwartungsnutzen erhöht. Die Differenz aus beiden Werten liefert den \textbf{Wert der Information}.
